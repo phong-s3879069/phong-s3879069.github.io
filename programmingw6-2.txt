@@ -1,0 +1,32 @@
+def print_table(headings, col_width, rows):
+    """
+    headings: list of string for the table headings
+    (heading titles are centered)
+    col_width: column width for all columns
+    rows: list of row, each row is a list of string
+    (number of elements of row == number of elements of headings)
+    (row content is aligned left)
+    """
+    # print the heading
+    for h in headings:
+        print(h.center(col_width), end='')
+    print()
+
+    # print the separator between heading & content
+    print('-' * len(headings) * col_width)
+
+    # print the row
+    for row in rows:
+        # print each string of a row
+        for content in row:
+            print(content.ljust(col_width), end='')
+        print()
+
+
+heads = ['Student Id', 'Student Name', 'Grade']
+width = 20
+student1 = ['0001', 'Tom Jerry', 'HD']
+student2 = ['00000000002', 'This Name Is Long', 'DI']
+
+
+print_table(heads, width, [student1, student2])
