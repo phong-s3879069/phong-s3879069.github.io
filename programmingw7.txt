@@ -1,0 +1,35 @@
+def check_palindrome(x):
+    x_r = x[::-1]
+    if x == x_r:
+        return True
+    else:
+  	    return False
+
+x = '1234321'
+check_palindrome(x)
+
+
+def is_palindrome(str):
+    """
+    decide if a string is palindrome
+    'abcba' => True
+    'This is a String' => False
+    """
+    # l = len(str)
+    # str[0]    str[l - 1]
+    # str[1]    str[l - 2]
+    # str[2]    str[l - 3]
+    #
+    # 0 to l // 2
+    # 10 => 5
+    # 9 => 4
+    l = len(str)
+    for index in range(l // 2):
+        if str[index] != str[l - 1 - index]:
+            return False
+    return True
+
+print(is_palindrome('ABCBA')) # True
+print(is_palindrome('ABCCBA')) # True
+print(is_palindrome('HHHHAHHHHH')) # False
+print(is_palindrome('HHHHAHHHH')) # True
