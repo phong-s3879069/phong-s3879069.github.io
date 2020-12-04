@@ -1,0 +1,109 @@
+print('EX2 :')
+
+def print_mul_table(n):
+    """
+    print the multiplication table from 0 to n
+    all of the content is right aligned
+    """
+    numbers = list(range(n + 1))
+    width = 6
+
+    # print the firs row
+    print(str('x').rjust(width), end='')
+    for row in numbers:
+        print(str(row).rjust(width), end='')
+    print()
+
+    for row in numbers:
+        # print the first column of this row
+        print(str(row).rjust(width), end='')
+
+        for col in numbers:
+            print(str(row * col).rjust(width), end='')
+        print()
+
+print_mul_table(12)
+
+
+print('\nEX4 : ')
+
+def reverse_str(str):
+    """
+    reverse the string str
+    Examples:
+    reverse_str('abc') # => 'cba'
+    reverse_str('111') # => '111'
+    reverse_str('') # => ''
+    """
+    # tmp_str = ''
+    # for letter in str:
+    #     tmp_str = letter + tmp_str
+    # return tmp_str
+
+    return str[::-1]
+
+print(reverse_str('abc')) # => 'cba'
+print(reverse_str('111')) # => '111'
+print(reverse_str('')) # => ''
+
+print('\nEX5 : ')
+
+
+def is_palindrome(str):
+    """
+    decide if a string str is palindrome
+    """
+    return str == reverse_str(str)
+
+
+print(is_palindrome('abc'))  # => True
+print(is_palindrome('abcba'))  # => True
+print(is_palindrome('a'))  # => True
+print(is_palindrome(''))  # => True
+
+print('\nEX8: ')
+
+def encrypt(message, new_alphabet):
+    """
+    Encrypt message using the new_alphabet
+    with substitution cipher
+    return the encrypted message
+    Examples
+    encrypt('ATTACKNOW', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') # => 'ATTACKNOW'
+    encrypt('ATTACKNOW', 'ZABCDEFGHIJKLMNOPQRSTUVWXY') # => 'ZSSZBJMNV'
+    encrypt('ATTACKNOW', 'BCDEFGHIJKLMNOPQRSTUVWXYZA') # => 'BUUBDLOPX'
+
+    encrypt('ATTACKNOW', 'DEFGHIJKLMNOPQRSTUVWXYZABC') # => ''  (Caesar cipher)
+    """
+    result_str = ''
+    standard_alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    for letter in message:
+        pos = standard_alphabet.find(letter)
+        result_str += new_alphabet[pos]
+    return result_str
+
+print(encrypt('ATTACKNOW', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')) # => 'ATTACKNOW'
+print(encrypt('ATTACKNOW', 'ZABCDEFGHIJKLMNOPQRSTUVWXY')) # => 'ZSSZBJMNV'
+print(encrypt('ATTACKNOW', 'BCDEFGHIJKLMNOPQRSTUVWXYZA')) # => 'BUUBDLOPX'
+
+
+def decrypt(ciphertext, new_alphabet):
+    """
+    Decrypt message using the new_alphabet
+    with substitution cipher
+    return the plain text message
+    Examples
+    decrypt('ATTACKNOW', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') # => 'ATTACKNOW'
+    decrypt('ZSSZBJMNV', 'ZABCDEFGHIJKLMNOPQRSTUVWXY') # => 'ATTACKNOW'
+    decrypt('BUUBDLOPX', 'BCDEFGHIJKLMNOPQRSTUVWXYZA') # => 'ATTACKNOW'
+    """
+    result_str = ''
+    standard_alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    for letter in ciphertext:
+        pos = new_alphabet.find(letter)
+        result_str += standard_alphabet[pos]
+    return result_str
+
+print(decrypt('ATTACKNOW', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')) # => 'ATTACKNOW'
+print(decrypt('ZSSZBJMNV', 'ZABCDEFGHIJKLMNOPQRSTUVWXY')) # => 'ATTACKNOW'
+print(decrypt('BUUBDLOPX', 'BCDEFGHIJKLMNOPQRSTUVWXYZA')) # => 'ATTACKNOW'
