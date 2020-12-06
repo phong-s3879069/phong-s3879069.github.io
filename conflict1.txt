@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-This is online content
-=======
-this is online content
->>>>>>> newbranch1
