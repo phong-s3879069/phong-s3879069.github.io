@@ -1,0 +1,19 @@
+body {
+    background-color: black;
+    line-height: 2;
+}
+p {
+    color: white;
+}
+h2 {
+    color: tan;
+}
+
+.para1 {
+    margin-top: 50px;
+}
+
+.image {
+    width: 50%;
+    height: 50%;
+}

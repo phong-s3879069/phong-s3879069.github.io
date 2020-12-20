@@ -8,8 +8,49 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('/w3images/parallax1.jpg');
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/w3images/parallax2.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/w3images/parallax3.jpg");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
 </style>
 <body>
 
@@ -31,30 +72,44 @@ body {font-family: "Lato", sans-serif}
 </div>
 
 <!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <img src="phongbackground.jpg" width="100%" height="600">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">MY <span class="w3-hide-small">WEBSITE</span>
+  </div>
 </div>
-  <div class="w3-black" id="information">
-    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-      <h2 class="w3-wide w3-center">About me</h2>
-      <p class="w3-opacity w3-center"><i>Personal information</i></p><br>
-      <p class="w3-justify">
-        Full name: Tran Duy Phong
-      </p>
-      <p class="w3-justify"> 
-        Student number: s3879069
-      </p>
-      <p class="w3-justify">	
-        Email address: tranduyphong18072002@gmail.com or s3879069@rmit.edu.vn
-      </p>
-      <p class="w3-justify">
-        Nationality: Hanoi, Vietnam
-      </p>
-      <p class="w3-justify">
-        About myself: In tenth grade, I started learning Germans as I intended to study abroad in Germany. At that time, I was attracted to this lovely country because of the culture and architecture, and besides, my father told me that there would be no tuition fee if one were to be admitted. At the end of grade 10, however, there was a big change with me and my family. After considering all the other options, Canada seemed by far the best choice as it would equip me with a comprehensive education. Aside from that, I was drawn to the idea of having a relative, someone I can rely on in foreign waters as I have an aunt who lives there.  With that in mind, I decided to go to Canada and studied in a public secondary school for 2 years. When the COVID-19 pandemic happened, unfortunately, my host was one of the first 5 people who got infected with the corona-virus in my city, yet I was still healthy. After a week since my host was sent to the hospital, the doctor notified us with news that nearly defeated me: She had a brain hemorrhage and death was only a matter of time. As these chaotic kept occurring around me, what I remember most would have to be what my dad uttered on a Sunday afternoon after my host was hospitalized, a sentence that made me broke down in tears: “We are on opposite sides of the earth, and so if anything happens, it’ll hurt me and your mother even more than If you were here”. On May 16th, 2020, I was luckily chosen by the Vietnamese embassy to go back to Vietnam.
-      </p>
-      <p class="w3-justify w3-margin-bottom"> 
-        Hobby:  I have always been an admirer and competitor in every sport. Basketball, however, was by far my favorite out of the bunch. I played for my secondary and high school basketball team, proudly finishing high school with 2 silver and 3 gold medals. Although I don’t get as much time to practice on the court, I try to always put in 2-3 games every week.  
-      </p>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT ME</h3>
+  <p class="w3-center"><em>Personal Information</em></p>
+  <p class="w3-justify">
+    Full name: Tran Duy Phong
+  </p>
+  <p class="w3-justify"> 
+    Student number: s3879069
+  </p>
+  <p class="w3-justify">	
+    Email address: tranduyphong18072002@gmail.com or s3879069@rmit.edu.vn
+  </p>
+  <p class="w3-justify">
+    Nationality: Hanoi, Vietnam
+  </p>
+  <p class="w3-justify">
+    About myself: In tenth grade, I started learning Germans as I intended to study abroad in Germany. At that time, I was attracted to this lovely country because of the culture and architecture, and besides, my father told me that there would be no tuition fee if one were to be admitted. At the end of grade 10, however, there was a big change with me and my family. After considering all the other options, Canada seemed by far the best choice as it would equip me with a comprehensive education. Aside from that, I was drawn to the idea of having a relative, someone I can rely on in foreign waters as I have an aunt who lives there.  With that in mind, I decided to go to Canada and studied in a public secondary school for 2 years. When the COVID-19 pandemic happened, unfortunately, my host was one of the first 5 people who got infected with the corona-virus in my city, yet I was still healthy. After a week since my host was sent to the hospital, the doctor notified us with news that nearly defeated me: She had a brain hemorrhage and death was only a matter of time. As these chaotic kept occurring around me, what I remember most would have to be what my dad uttered on a Sunday afternoon after my host was hospitalized, a sentence that made me broke down in tears: “We are on opposite sides of the earth, and so if anything happens, it’ll hurt me and your mother even more than If you were here”. On May 16th, 2020, I was luckily chosen by the Vietnamese embassy to go back to Vietnam.
+  </p>
+  <p class="w3-justify w3-margin-bottom"> 
+    Hobby:  I have always been an admirer and competitor in every sport. Basketball, however, was by far my favorite out of the bunch. I played for my secondary and high school basketball team, proudly finishing high school with 2 silver and 3 gold medals. Although I don’t get as much time to practice on the court, I try to always put in 2-3 games every week.  
+  </p>
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-right"></i>Tran Duy Phong</b></p><br>
+      <img src="phong.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" width="500" height="333">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
       <p class="w3-opacity w3-center"><i>Interest in IT</i></p><br>
       <p class="w3-justify">
         The journey to my curiosity in IT was a long one. I played a myriad of games, many of which were quite childish when I was in elementary school. As I got older, my cousin brought me to the game that I believe whoever studies Information Technology knows: League of Legends (LOL). I was just a child when I first started playing this game and spent most of my 2013 summer playing LOL with my friends. I played pretty much around the clock and was right back at it once I finished every much-needed nap-time. My life revolved around video games. And then when I was in grade 10, I was captivated with computers because of my brother, as he won the typing contest and got a huge computer with accessories such as a keyboard and mouse. From that moment, I started exploring computers, laptops and other technologies. When I came to Canada to study, my mom assured me that Canada is one of the most developed countries in Information Technology and whoever studies that, would have an incredibly high wage. Further, my mom is also working in NVIDIA (an American multinational technology corporation founded in Delaware and based in Santa Clara, California) which is also related to IT. Hence, I was even more interested in Information Technology. I thought about League of Legends but this time with a different and more mature train of thought, I wondered how they could make such an amazing game. So, when I was in grade 12, I decided to take a Computer Science class. When I saw peers of mine using algorithms and numbers to make a simple picture, I was hooked. I studied Java, Eclipse and some Graphics. But unfortunately, I only learned for 3 months because of the COVID-19 pandemic, I was not able to go to school and online-lessons about coding were very tough. In the summer of 2020, I went back to Vietnam and received a massive birthday present from my mother which was a computer. Later on, I began to find a university where I could learn and improve my skills in coding, programming and then, I knew RMIT was the perfect fit. At first, I intended to study at RMIT for a year and then in the second year, as RMIT supports students to transfer credits to other foreign universities, I would go back to Canada to continue studying computer science. But I have changed my mind right after I saw RMIT’s partners. When I was a child, my mother worked at INTEL which has always been my dream company and fortunately, INTEL is one of RMIT’s partners. Therefore, I have decided that RMIT University is where I should be. At RMIT, I expect to improve my IT skills such as coding, programming, IT language as well as soft skills such as leadership. Those aspects and experiences would help me immensely in my future endeavors.
